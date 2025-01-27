@@ -1,0 +1,95 @@
+make folder .github\workflows 
+ci.yml
+
+
+
+ci.yml
+
+name: First GitHub Actions # Name of the GitHub Actions workflow.
+
+on: [push] # Trigger this workflow on push events.
+
+jobs:
+  build: # Job name.
+    runs-on: ubuntu-latest # The job runs on the latest version of Ubuntu.
+
+    strategy:
+      matrix:
+        python-version: [3.8, 3.9] # The job runs on Python versions 3.8 and 3.9.
+
+    steps:
+      # Step 1: Check out the repository code into the runner.
+      - uses: actions/checkout@v2
+
+      # Step 2: Set up the specified Python version from the matrix.
+      - name: Setting up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: ${{ matrix.python-version }}
+
+      # Step 3: Install all the dependencies required for the tests.
+      - name: Installing all the dependencies
+        run: |
+          python -m pip install --upgrade pip # Upgrade pip.
+          pip install pytest
+
+      # Step 4: Run the tests using pytest.
+      - name: Running tests
+        run: |
+          python -m pytest addition.py
+
+
+
+addition.py
+
+def add(a,b):
+    return a+b
+
+def test_add():
+    assert add(1,2)==3
+    assert add(2,2)==4
+
+
+
+
+
+make a repo
+
+
+
+    open git bash===
+    git init   
+    git status
+    git add .
+    git commit -m "first"
+
+
+    git remote add origin https .....
+
+    git push -u origin  main
+    
+
+
+    settings action runners
+       
+    mkdir actions-runner
+    cd actions-runner
+
+    curl -L -o actions-runner-win-x64-2.39.1.zip {url}
+
+
+    unzip action.....zip
+
+    clear 
+    
+    ./config.cmd --url <git repo> --token AR.....
+
+
+
+go to actions 
+...
+view workfile 
+
+
+
+
