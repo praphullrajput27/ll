@@ -1,0 +1,25 @@
+create a folder,inside it create html folder.
+make a Dockerfile in it 
+and a index.htlm
+
+ 
+FROM nginx:alpine
+
+COPY html /usr/share/nginx/html
+
+EXPOSE 80
+
+
+
+open cmd
+
+dir
+docker build -t my-nginx-server .
+docker images
+docker run -d -p 8080:80 my-nginx-server
+
+search 127.0.0.1:8080
+
+docker container ls 
+docker stop <id>
+docker remove id
