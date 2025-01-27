@@ -1,0 +1,16 @@
+make a repo in github
+git clone <repo-name>
+cd repo-name
+touch text1.txt
+git add .
+git commit -m "first commit"
+git push
+
+git branch b1
+git checkout b1
+touch text2.txt
+git add .
+git commit -m "second commit"
+git push
+
+now again go to github repo there is a comapare and pull request accept it and do same like GUI
