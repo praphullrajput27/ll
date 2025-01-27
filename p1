@@ -1,0 +1,14 @@
+
+mkdir devops
+cd devops
+git init
+touch text1.txt
+git add .
+git commit -m "first commit"
+git branch b1
+git checkout b1
+touch text2.txt
+git add .
+git commit -m "second commit"
+git checkout master
+git merge b1
